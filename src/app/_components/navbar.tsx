@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="h-[70px] w-full fixed contain bg-background">
+    <nav className="h-top w-full fixed contain bg-background">
       <div className="h-full max-w-[19200px] mx-auto grid grid-cols-3 items-center bg-background">
         <h1 className="font-black font-mono">CS</h1>
         <ul className="flex items-center mx-auto">

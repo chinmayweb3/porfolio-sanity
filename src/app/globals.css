@@ -78,3 +78,10 @@
 .contain {
   @apply px-[40px];
 }
+
+.h-top {
+  height: 70px;
+}
+.mt-top {
+  margin-top: 70px;
+}
