@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { client } from "@/lib/sanityClient";
-import Image from "next/image";
 import HeroSection from "./_components/heroSection";
+import WorkSection from "./_components/workSection";
 
-export const revalidate = 10; // revalidate at most every hour
+// export const revalidate = 10; // revalidate at most every hour
 
 export default async function Home() {
   // const alldata = await client.fetch(`*[_type=="venue"]`);
@@ -13,6 +11,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col w-full">
       <HeroSection />
+      <WorkSection />
     </main>
   );
 }
