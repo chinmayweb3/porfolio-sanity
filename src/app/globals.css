@@ -75,7 +75,7 @@
   }
 }
 
-.contain {
+.contain-in {
   @apply px-[40px];
 }
 
