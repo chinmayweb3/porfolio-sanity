@@ -1,15 +1,18 @@
+import { title } from "process";
 import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    fontSize: {
+      "t-lg": "56px",
+      "t2-lg": "14px",
+    },
+    colors: {
+      "t2-c": "rgb(75 85 99)",
+    },
     container: {
       center: true,
       padding: "2rem",

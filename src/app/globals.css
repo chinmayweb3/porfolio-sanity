@@ -79,6 +79,11 @@
   @apply px-[40px];
 }
 
+.contain-in-section {
+  margin: 0 auto;
+  width: 1300px;
+}
+
 .h-top {
   height: 70px;
 }
