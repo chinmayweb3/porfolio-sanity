@@ -9,9 +9,7 @@ const HeroSection = () => {
         <div>
           <Image
             className="rounded-sm shadow-md"
-            src={
-              "https://i.pinimg.com/736x/dd/2c/8e/dd2c8e3b40899eeba8e5a711bd27b850.jpg"
-            }
+            src={"https://i.pinimg.com/736x/dd/2c/8e/dd2c8e3b40899eeba8e5a711bd27b850.jpg"}
             width={350}
             height={500}
             alt="my image"
@@ -21,10 +19,9 @@ const HeroSection = () => {
           <h1 className="font-extrabold text-[42px] leading-10">
             Hi, I'm Chinmay and <br /> I'm a Frontend Developer.
           </h1>
-          <p className="pt-[10px] pr-[140px] opacity-90 text-[12px]">
-            I'm Junior Java Developer based in Gdansk, Poland. I have 1 year of
-            commercial experience and I specialize im creating web apps. I am
-            open for new opportunities and intresting projects.
+          <p className="pt-[10px] pr-[140px] text-[12px]">
+            I'm Junior Java Developer based in Gdansk, Poland. I have 1 year of commercial experience and I specialize im creating web apps. I am open
+            for new opportunities and intresting projects.
           </p>
           <div className="flex items-center gap-[20px] pt-[15px]">
             <Button className="px-[40px]">Contact me</Button>
