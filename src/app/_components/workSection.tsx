@@ -20,33 +20,58 @@ const WorkSection = () => {
         <ul className=" w-full grid grid-cols-3 gap-[40px] mt-[30px] px-[50px]">
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-t2-c rounded-md "></div>
-            <h3>title</h3>
-            <p>param</p>
+            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="flex flex-col px-[5px]">
+              <h3 className="">title</h3>
+              <p className="text-t2-lg text-t2-c">param</p>
+              <Button variant="secondary" className="w-full mt-[5px]">
+                Github
+              </Button>
+            </div>
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-t2-c rounded-md "></div>
-            <h3>title</h3>
-            <p>param</p>
+            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="flex flex-col px-[5px]">
+              <h3 className="">title</h3>
+              <p className="text-t2-lg text-t2-c">param</p>
+              <Button variant="secondary" className="w-full mt-[5px]">
+                Github
+              </Button>
+            </div>
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-t2-c rounded-md "></div>
-            <h3>title</h3>
-            <p>param</p>
+            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="flex flex-col px-[5px]">
+              <h3 className="">title</h3>
+              <p className="text-t2-lg text-t2-c">param</p>
+              <Button variant="secondary" className="w-full mt-[5px]">
+                Github
+              </Button>
+            </div>
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-t2-c rounded-md "></div>
-            <h3>title</h3>
-            <p>param</p>
+            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="flex flex-col px-[5px]">
+              <h3 className="">title</h3>
+              <p className="text-t2-lg text-t2-c">param</p>
+              <Button variant="secondary" className="w-full mt-[5px]">
+                Github
+              </Button>
+            </div>
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-t2-c rounded-md "></div>
-            <h3>title</h3>
-            <p>param</p>
+            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="flex flex-col px-[5px]">
+              <h3 className="">title</h3>
+              <p className="text-t2-lg text-t2-c">param</p>
+              <Button variant="secondary" className="w-full mt-[5px]">
+                Github
+              </Button>
+            </div>
           </li>
         </ul>
       </div>

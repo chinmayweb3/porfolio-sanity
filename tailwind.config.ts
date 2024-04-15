@@ -11,7 +11,7 @@ const config = {
       "t2-lg": "14px",
     },
     colors: {
-      "t2-c": "rgb(75 85 99)",
+      "t2-c": "rgb(108 118 132)",
     },
     container: {
       center: true,
