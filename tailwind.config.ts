@@ -29,6 +29,7 @@ const config = {
     extend: {
       screens: {
         mlg: { max: "1024px" },
+        mmd: { max: "768px" },
       },
       fontFamily: {
         sans: ["var(--font-sans)"],

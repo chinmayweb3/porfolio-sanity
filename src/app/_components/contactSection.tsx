@@ -16,7 +16,7 @@ const ContactSection = () => {
           any questions feel free to ask me for more information.
         </p>
 
-        <div className="w-full grid grid-cols-[1.3fr_1fr] gap-[50px] items-center pt-[50px] px-[50px]">
+        <div className="w-full grid grid-cols-[1.3fr_1fr] mlg:grid-cols-1 gap-[50px] mlg:gap-[60px] items-center pt-[50px] px-[50px]">
           <div className="flex flex-col gap-[20px]">
             <Input
               className="focus-visible:ring-offset-0"
