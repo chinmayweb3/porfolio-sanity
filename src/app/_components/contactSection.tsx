@@ -5,9 +5,12 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="w-full  contain-in-section py-[75px]">
+    <section
+      id="contact"
+      className="w-full  contain-in-section py-[75px] mlg:py-[50px]"
+    >
       <div className="flex flex-col items-center">
-        <h2 className="font-extrabold text-t-lg">Contact</h2>
+        <h2 className="font-extrabold text-t-lg mlg:text-t-md">Contact</h2>
         <p className="text-t2-lg text-t2-c text-center leading-tight">
           Check my commercial and non commercial projects. <br /> If you have
           any questions feel free to ask me for more information.

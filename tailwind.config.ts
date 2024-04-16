@@ -13,6 +13,7 @@ const config = {
   theme: {
     fontSize: {
       "t-lg": "52px",
+      "t-md": "42px",
       "t2-lg": "14px",
     },
     colors: {
@@ -26,6 +27,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        mlg: { max: "1024px" },
+      },
       fontFamily: {
         sans: ["var(--font-sans)"],
       },
