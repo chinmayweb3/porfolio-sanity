@@ -8,26 +8,38 @@ const Navbar = () => {
         <h1 className="font-black font-mono">CS</h1>
         <ul className="flex items-center mx-auto">
           <li>
-            <Button variant={"ghost"}>Work</Button>
+            <a href="#work">
+              <Button variant={"ghost"}>Work</Button>
+            </a>
           </li>
           <li>
-            <Button variant={"ghost"}>Resume</Button>
+            <a href="#resume">
+              <Button variant={"ghost"}>Resume</Button>
+            </a>
           </li>
           <li>
-            <Button variant={"ghost"}>Contact</Button>
+            <a href="#contact">
+              <Button variant={"ghost"}>Contact</Button>
+            </a>
           </li>
         </ul>
         <ul className="flex items-center ml-auto">
           <li>
             <Button asChild variant={"link"}>
-              <a href="https://www.linkedin.com/in/chinmay-suryavanshi-76a4b2240/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/chinmay-suryavanshi-76a4b2240/"
+                target="_blank"
+              >
                 LinkedIn
               </a>
             </Button>
           </li>
           <li>
             <Button asChild variant={"link"}>
-              <a href="https://github.com/chinmayweb3?tab=repositories" target="_blank">
+              <a
+                href="https://github.com/chinmayweb3?tab=repositories"
+                target="_blank"
+              >
                 Github
               </a>
             </Button>

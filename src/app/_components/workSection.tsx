@@ -3,7 +3,7 @@ import React from "react";
 
 const WorkSection = () => {
   return (
-    <div className="w-full  contain-in-section pb-[150px]">
+    <div id="work" className="w-full  contain-in-section py-[75px]">
       <div className="flex flex-col items-center">
         <h2 className="font-extrabold text-t-lg">Work</h2>
         <p className="text-t2-lg text-t2-c text-center leading-tight">
@@ -27,7 +27,7 @@ const WorkSection = () => {
         <ul className=" w-full grid grid-cols-3 gap-[40px] mt-[30px] px-[50px]">
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -38,7 +38,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -49,7 +49,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -60,7 +60,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -71,7 +71,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>

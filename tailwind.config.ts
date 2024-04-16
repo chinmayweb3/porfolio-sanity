@@ -12,7 +12,7 @@ const config = {
   prefix: "",
   theme: {
     fontSize: {
-      "t-lg": "56px",
+      "t-lg": "52px",
       "t2-lg": "14px",
     },
     colors: {
