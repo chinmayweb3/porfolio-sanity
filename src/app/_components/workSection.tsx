@@ -38,7 +38,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -49,7 +49,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -60,7 +60,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
@@ -71,7 +71,7 @@ const WorkSection = () => {
           </li>
           <li className="w-full flex-flex-col">
             {/* image  */}
-            <div className="w-full aspect-[2/1.3] bg-[#d4d8db] rounded-md "></div>
+            <div className="w-full aspect-[2/1.3] bg-gradient-work rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
               <p className="text-t2-lg text-t2-c">param</p>
