@@ -1,5 +1,7 @@
+import { Contact } from "lucide-react";
 import HeroSection from "./_components/heroSection";
 import WorkSection from "./_components/workSection";
+import ContactSection from "./_components/contactSection";
 
 // export const revalidate = 10; // revalidate at most every hour
 
@@ -12,6 +14,7 @@ export default async function Home() {
     <main className="flex flex-col w-full">
       <HeroSection />
       <WorkSection />
+      <ContactSection />
     </main>
   );
 }

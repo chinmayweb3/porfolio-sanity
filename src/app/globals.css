@@ -83,6 +83,10 @@
   margin: 0 auto;
   width: 1200px;
 }
+.contain-in-section-lg {
+  margin: 0 auto;
+  width: 1300px;
+}
 
 .h-top {
   height: 70px;
