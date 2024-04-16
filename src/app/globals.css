@@ -90,3 +90,7 @@
 .mt-top {
   margin-top: 70px;
 }
+
+.bg-gradient-work {
+  background: linear-gradient(-45deg, #dbdddf, #c4c6c8);
+}
