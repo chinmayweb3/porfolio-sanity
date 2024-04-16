@@ -85,7 +85,10 @@
 
 .contain-in-section {
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
+  max-width: 1240px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .contain-in-section-lg {
   margin: 0 auto;
