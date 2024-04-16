@@ -10,7 +10,7 @@ const WorkSection = () => {
           Check my commercial and non commercial projects. <br /> If you have
           any questions feel free to ask me for more information.
         </p>
-        <div className="flex gap-[10px] mt-[50px]">
+        <div className="flex gap-[10px] mt-[40px]">
           <button className="rounded-[40px] text-primary-foreground px-[20px] py-[8px] text-[12px] bg-primary ">
             All (9){" "}
           </button>
