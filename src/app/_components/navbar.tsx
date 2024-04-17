@@ -40,7 +40,8 @@ const Navbar = () => {
                 href="https://www.linkedin.com/in/chinmay-suryavanshi-76a4b2240/"
                 target="_blank"
               >
-                LinkedIn
+                {/* LinkedIn */}
+                <LinkedinIcon />
               </a>
             </Button>
           </li>
@@ -50,7 +51,7 @@ const Navbar = () => {
                 href="https://github.com/chinmayweb3?tab=repositories"
                 target="_blank"
               >
-                Github
+                <GithubIcon />
               </a>
             </Button>
           </li>
