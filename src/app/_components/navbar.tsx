@@ -1,12 +1,22 @@
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { GithubIcon, LinkedinIcon } from "lucide-react";
 import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="h-top w-full fixed contain-in bg-background z-[10]">
-      <div className="h-full max-w-[19200px] mx-auto grid grid-cols-3 items-center bg-background">
+    <nav className="h-top w-full fixed contain-in bg-background z-[10] shadow-sm">
+      <div className="h-full max-w-[19200px] mx-auto grid grid-cols-3 mmd:grid-cols-2 items-center bg-background">
         <h1 className="font-black font-mono">CS</h1>
-        <ul className="flex items-center mx-auto">
+        <ul className="flex items-center mx-auto mmd:hidden">
           <li>
             <a href="#work">
               <Button variant={"ghost"}>Work</Button>
@@ -23,7 +33,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <ul className="flex items-center ml-auto">
+        <ul className="flex items-center ml-auto mmd:hidden">
           <li>
             <Button asChild variant={"link"}>
               <a
@@ -45,6 +55,55 @@ const Navbar = () => {
             </Button>
           </li>
         </ul>
+        <div className="hidden ml-auto mmd:block">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline">
+                <HamburgerMenuIcon />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side={"right"}>
+              <div className="flex flex-col justify-between h-full w-full">
+                <ul className="flex flex-col items-center mx-auto pt-[50px] text-[22px]">
+                  <li>
+                    <a href="#work">
+                      <SheetClose>
+                        <Button variant={"ghost"}>Work</Button>
+                      </SheetClose>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resume">
+                      <Button variant={"ghost"}>Resume</Button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact">
+                      <Button variant={"ghost"}>Contact</Button>
+                    </a>
+                  </li>
+                </ul>
+
+                <ul className="flex items-center mx-auto pt-[20px] text-[22px]">
+                  <li>
+                    <a href="#work">
+                      <Button variant={"ghost"}>
+                        <LinkedinIcon />
+                      </Button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resume">
+                      <Button variant={"ghost"}>
+                        <GithubIcon />
+                      </Button>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );

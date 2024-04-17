@@ -82,6 +82,11 @@
 .contain-in {
   @apply px-[40px];
 }
+@media screen and (max-width: 768px) {
+  .contain-in {
+    @apply px-[20px];
+  }
+}
 
 .contain-in-section {
   margin: 0 auto;
@@ -100,6 +105,14 @@
 }
 .mt-top {
   margin-top: 70px;
+}
+@media screen and (max-width: 768px) {
+  .h-top {
+    height: 60px;
+  }
+  .mt-top {
+    margin-top: 60px;
+  }
 }
 
 .bg-gradient-work {
