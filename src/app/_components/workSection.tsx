@@ -5,35 +5,37 @@ const WorkSection = () => {
   return (
     <div
       id="work"
-      className="w-full  contain-in-section py-[75px] mlg:py-[50px]"
+      className="w-full  contain-in-section py-[75px] mlg:py-[50px] msm:py-[30px]"
     >
       <div className="flex flex-col items-center">
-        <h2 className="font-extrabold text-t-lg mlg:text-t-md">Work</h2>
-        <p className="text-t2-lg text-t2-c text-center leading-tight">
+        <h2 className="font-extrabold text-t-lg mlg:text-t-md msm:text-t-sm">
+          Work
+        </h2>
+        <p className="text-t2-lg msm:text-t2-sm text-t2-c text-center leading-tight">
           Check my commercial and non commercial projects. <br /> If you have
           any questions feel free to ask me for more information.
         </p>
-        <div className="flex gap-[10px] mt-[40px]">
-          <button className="rounded-[40px] text-primary-foreground px-[20px] py-[8px] text-[12px] bg-primary ">
+        <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px]">
+          <button className="rounded-[40px] text-primary-foreground px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-primary ">
             All (9){" "}
           </button>
-          <button className="rounded-[40px] text-primary px-[20px] py-[8px] text-[12px] bg-[#e5e6e6] ">
+          <button className="rounded-[40px] text-primary px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-[#e5e6e6] ">
             Typescript (9){" "}
           </button>
-          <button className="rounded-[40px] text-primary px-[20px] py-[8px] text-[12px] bg-[#e5e6e6] ">
+          <button className="rounded-[40px] text-primary px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-[#e5e6e6] ">
             Golang (9){" "}
           </button>
-          <button className="rounded-[40px] text-primary px-[20px] py-[8px] text-[12px] bg-[#e5e6e6] duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]">
+          <button className="rounded-[40px] text-primary px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-[#e5e6e6] duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]">
             MySQL (9){" "}
           </button>
         </div>
-        <ul className=" w-full grid grid-cols-3 gap-[40px] mlg:gap-[25px] mt-[30px] px-[50px]">
+        <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
           <li className="w-full flex-flex-col">
             {/* image  */}
             <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
-              <p className="text-t2-lg text-t2-c">param</p>
+              <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
               <Button variant="secondary" className="w-full mt-[5px]">
                 Github
               </Button>
@@ -44,7 +46,7 @@ const WorkSection = () => {
             <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
-              <p className="text-t2-lg text-t2-c">param</p>
+              <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
               <Button variant="secondary" className="w-full mt-[5px]">
                 Github
               </Button>
@@ -55,7 +57,7 @@ const WorkSection = () => {
             <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
-              <p className="text-t2-lg text-t2-c">param</p>
+              <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
               <Button variant="secondary" className="w-full mt-[5px]">
                 Github
               </Button>
@@ -66,7 +68,7 @@ const WorkSection = () => {
             <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
-              <p className="text-t2-lg text-t2-c">param</p>
+              <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
               <Button variant="secondary" className="w-full mt-[5px]">
                 Github
               </Button>
@@ -77,7 +79,7 @@ const WorkSection = () => {
             <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
             <div className="flex flex-col px-[5px]">
               <h3 className="">title</h3>
-              <p className="text-t2-lg text-t2-c">param</p>
+              <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
               <Button variant="secondary" className="w-full mt-[5px]">
                 Github
               </Button>

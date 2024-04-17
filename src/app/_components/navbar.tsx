@@ -74,12 +74,16 @@ const Navbar = () => {
                   </li>
                   <li>
                     <a href="#resume">
-                      <Button variant={"ghost"}>Resume</Button>
+                      <SheetClose>
+                        <Button variant={"ghost"}>Resume</Button>
+                      </SheetClose>
                     </a>
                   </li>
                   <li>
                     <a href="#contact">
-                      <Button variant={"ghost"}>Contact</Button>
+                      <SheetClose>
+                        <Button variant={"ghost"}>Contact</Button>
+                      </SheetClose>
                     </a>
                   </li>
                 </ul>
@@ -87,16 +91,30 @@ const Navbar = () => {
                 <ul className="flex items-center mx-auto pt-[20px] text-[22px]">
                   <li>
                     <a href="#work">
-                      <Button variant={"ghost"}>
-                        <LinkedinIcon />
-                      </Button>
+                      <SheetClose>
+                        <Button variant={"ghost"}>
+                          <a
+                            href="https://www.linkedin.com/in/chinmay-suryavanshi-76a4b2240/"
+                            target="_blank"
+                          >
+                            <LinkedinIcon />
+                          </a>
+                        </Button>
+                      </SheetClose>
                     </a>
                   </li>
                   <li>
                     <a href="#resume">
-                      <Button variant={"ghost"}>
-                        <GithubIcon />
-                      </Button>
+                      <SheetClose>
+                        <Button variant={"ghost"}>
+                          <a
+                            href="https://github.com/chinmayweb3?tab=repositories"
+                            target="_blank"
+                          >
+                            <GithubIcon />
+                          </a>
+                        </Button>
+                      </SheetClose>
                     </a>
                   </li>
                 </ul>

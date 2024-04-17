@@ -14,7 +14,9 @@ const config = {
     fontSize: {
       "t-lg": "52px",
       "t-md": "42px",
+      "t-sm": "32px",
       "t2-lg": "14px",
+      "t2-sm": "12px",
     },
     colors: {
       "t2-c": "rgb(108 118 132)",
@@ -30,6 +32,7 @@ const config = {
       screens: {
         mlg: { max: "1024px" },
         mmd: { max: "768px" },
+        msm: { max: "430px" },
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
