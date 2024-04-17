@@ -11,14 +11,8 @@ const nextConfig = {
   },
   webpack: (config) => {
     config.module.rules.push({
-      exclude: /sanity/,
-      loader: "ignore-loader",
-      use: {
-        loader: "babel-loader", // Use Babel loader
-        options: {
-          presets: ["next/babel"],
-        },
-      },
+      test: /sanity\//, // Adjust this regex to match your folder
+      use: "ignore-loader",
     });
     return config;
   },
