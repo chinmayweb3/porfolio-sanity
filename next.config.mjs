@@ -9,6 +9,13 @@ const nextConfig = {
       },
     ],
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      exclude: /sanity/,
+      loader: "ignore-loader",
+    });
+    return config;
+  },
 };
 
 export default nextConfig;
