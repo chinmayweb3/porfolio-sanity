@@ -12,7 +12,7 @@
     "tsconfig.json": true,
     "next-env.d.ts": true,
     "node_modules": true,
-    "public": false,
+    "public": true,
     "sanity/package-lock.json": true,
     "sanity/sanity.cli.ts": true,
     "sanity/node_modules": true,
