@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 
 export type IHeroQuery = {
   imageurl: string;
-  title: string;
+  title: { children: { text: string }[] }[];
   para: { children: { text: string }[] }[];
 };
 

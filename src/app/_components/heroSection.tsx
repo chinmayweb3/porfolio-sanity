@@ -12,10 +12,10 @@ const HeroSection = async () => {
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
       <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
         <div className="flex-grow aspect-[1/1.3] mlg:w-[30%] mlg:mx-auto msm:w-[40%]">
-          {resp["imageurl"] && (
+          {resp.imageurl && (
             <Image
               className="rounded-sm shadow-2xl w-full h-full object-cover"
-              src={resp["imageurl"]}
+              src={resp.imageurl}
               width={350}
               height={500}
               alt="my image"
@@ -25,9 +25,7 @@ const HeroSection = async () => {
         <div className="flex flex-col flex-grow mlg:items-center msm:text-center">
           <h1
             dangerouslySetInnerHTML={{
-              __html: resp["title"][0]["children"]
-                .map((c: any) => c.text)
-                .join(""),
+              __html: resp.title[0].children.map((c: any) => c.text).join(""),
             }}
             className="font-extrabold text-t-lg mlg:text-t-md msm:text-t-sm leading-tight"
           >
@@ -35,7 +33,7 @@ const HeroSection = async () => {
           </h1>
           <p
             dangerouslySetInnerHTML={{
-              __html: resp["para"][0]["children"]
+              __html: resp.para[0].children
                 .map((child: any) => child.text)
                 .join(""),
             }}
