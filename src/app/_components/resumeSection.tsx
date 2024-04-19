@@ -9,7 +9,7 @@ const ResumeSection = () => {
     >
       <p className="text-t2 text-[18px] tracking-widest">
         To view the resume, click{" "}
-        <Button className="px-0" variant={"link"}>
+        <Button className="px-0 text-destructive" variant={"link"}>
           Here
         </Button>
         .
