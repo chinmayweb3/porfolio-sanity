@@ -1,26 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { client } from "@/lib/sanityClient";
+import { heroApi } from "@/lib/api";
 import Image from "next/image";
 import React from "react";
 
 export const revalidate = 10; // revalidate at most every hour
 
 const HeroSection = async () => {
-  const alldata = await client.fetch(`*[_type=="alltitle"][0]{
-    title,
-    "imageurl":profileimage.asset->url,
-    para
-  }`);
+  const resp = await heroApi();
 
-  // console.log("get add the data: ", alldata);
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
       <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
         <div className="flex-grow aspect-[1/1.3] mlg:w-[30%] mlg:mx-auto msm:w-[40%]">
-          {alldata["imageurl"] && (
+          {resp["imageurl"] && (
             <Image
               className="rounded-sm shadow-2xl w-full h-full object-cover"
-              src={alldata["imageurl"]}
+              src={resp["imageurl"]}
               width={350}
               height={500}
               alt="my image"
@@ -30,7 +25,7 @@ const HeroSection = async () => {
         <div className="flex flex-col flex-grow mlg:items-center msm:text-center">
           <h1
             dangerouslySetInnerHTML={{
-              __html: alldata["title"][0]["children"]
+              __html: resp["title"][0]["children"]
                 .map((c: any) => c.text)
                 .join(""),
             }}
@@ -40,7 +35,7 @@ const HeroSection = async () => {
           </h1>
           <p
             dangerouslySetInnerHTML={{
-              __html: alldata["para"][0]["children"]
+              __html: resp["para"][0]["children"]
                 .map((child: any) => child.text)
                 .join(""),
             }}
