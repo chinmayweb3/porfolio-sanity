@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { heroApi } from "@/lib/api";
+import { introApi } from "@/lib/api";
 import Image from "next/image";
 import React from "react";
 
 export const revalidate = 10; // revalidate at most every hour
 
 const HeroSection = async () => {
-  const resp = await heroApi();
+  const resp = await introApi("hero");
 
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
