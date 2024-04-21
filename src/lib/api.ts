@@ -1,3 +1,4 @@
+import { groq } from "next-sanity";
 import { client } from "./sanityClient";
 import {
   IIntroQuery,
@@ -5,6 +6,7 @@ import {
   IntroQuery,
   allWorkQuery,
   optionWorkQuery,
+  resumeQuery,
 } from "./sanityQuery";
 
 type IIntroArg = "hero" | "work" | "contact";
@@ -22,4 +24,13 @@ export const workApi = async (q: string): Promise<IWorkQuery> => {
     const resp = await client.fetch(optionWorkQuery, { q });
     return resp;
   }
+};
+
+export const resumeApi = async (): Promise<{ resume: string }> => {
+  const resp = await client.fetch(groq`*[_type=="resume"][0]{
+    "resume":resume.asset->url
+  }`);
+  console.log("r", resp);
+
+  return resp;
 };

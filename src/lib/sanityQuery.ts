@@ -71,3 +71,7 @@ export const optionWorkQuery = groq`{
     "count":count(*[_type=="workcard" && ^._id in tech[]->_id])
   }
 }`;
+
+export const resumeQuery = groq`*[_type=="resume"]{
+  ...
+}`;

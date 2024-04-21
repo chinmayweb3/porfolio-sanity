@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { resumeApi } from "@/lib/api";
 import React from "react";
 
-const ResumeSection = () => {
+export const revalidate = 3600; // revalidate at most every hour
+
+const ResumeSection = async () => {
+  const resp = await resumeApi();
+
   return (
     <div
       id="resume"
@@ -9,9 +14,13 @@ const ResumeSection = () => {
     >
       <p className="text-t2 text-[18px] tracking-widest">
         To view the resume, click{" "}
-        <Button className="px-0 text-destructive" variant={"link"}>
-          Here
-        </Button>
+        {resp?.resume && (
+          <a href={resp.resume} target="_blank">
+            <Button className="px-0 text-destructive" variant={"link"}>
+              Here
+            </Button>
+          </a>
+        )}
         .
       </p>
     </div>
