@@ -1,89 +1,109 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { workApi } from "@/lib/api";
+import { IWorkQuery } from "@/lib/sanityQuery";
+import Image from "next/image";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export const WorkData = () => {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState<string>("all");
+  const [options, setOptions] = useState<IWorkQuery>();
 
   useEffect(() => {
     (async () => {
-      // const resp = await introApi("contact");
+      const resp = await workApi(filter);
+      setOptions(resp);
     })();
   }, [filter]);
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px]">
-        <button className="rounded-[40px] text-primary-foreground px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-primary ">
-          All (9){" "}
-        </button>
-        <button className="rounded-[40px] text-primary px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-[#e5e6e6] ">
-          Typescript (9){" "}
-        </button>
-        <button className="rounded-[40px] text-primary px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-[#e5e6e6] ">
-          Golang (9){" "}
-        </button>
-        <button className="rounded-[40px] text-primary px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] bg-[#e5e6e6] duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]">
-          MySQL (9){" "}
-        </button>
-      </div>
-      <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
-        <li className="w-full flex-flex-col">
-          {/* image  */}
-          <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
-          <div className="flex flex-col px-[5px]">
-            <h3 className="">title</h3>
-            <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
-            <Button variant="secondary" className="w-full mt-[5px]">
-              Github
-            </Button>
-          </div>
-        </li>
-        <li className="w-full flex-flex-col">
-          {/* image  */}
-          <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
-          <div className="flex flex-col px-[5px]">
-            <h3 className="">title</h3>
-            <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
-            <Button variant="secondary" className="w-full mt-[5px]">
-              Github
-            </Button>
-          </div>
-        </li>
-        <li className="w-full flex-flex-col">
-          {/* image  */}
-          <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
-          <div className="flex flex-col px-[5px]">
-            <h3 className="">title</h3>
-            <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
-            <Button variant="secondary" className="w-full mt-[5px]">
-              Github
-            </Button>
-          </div>
-        </li>
-        <li className="w-full flex-flex-col">
-          {/* image  */}
-          <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
-          <div className="flex flex-col px-[5px]">
-            <h3 className="">title</h3>
-            <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
-            <Button variant="secondary" className="w-full mt-[5px]">
-              Github
-            </Button>
-          </div>
-        </li>
-        <li className="w-full flex-flex-col">
-          {/* image  */}
-          <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-md rounded-md "></div>
-          <div className="flex flex-col px-[5px]">
-            <h3 className="">title</h3>
-            <p className="text-t2-lg msm:text-t2-sm text-t2-c">param</p>
-            <Button variant="secondary" className="w-full mt-[5px]">
-              Github
-            </Button>
-          </div>
-        </li>
-      </ul>
+      <WorkFilter options={options} filter={filter} setFilter={setFilter} />
+      <WorkCard options={options} />
     </>
+  );
+};
+
+const WorkFilter = ({
+  options,
+  filter,
+  setFilter,
+}: {
+  options: IWorkQuery | undefined;
+  filter: string;
+  setFilter: Dispatch<SetStateAction<string>>;
+}) => {
+  if (!options?.allCounts) {
+    return <></>;
+  }
+  return (
+    <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px]">
+      <button
+        onClick={() => setFilter("all")}
+        className={`rounded-[40px] px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] ${
+          "all" === filter
+            ? "bg-primary text-primary-foreground"
+            : "bg-[#e5e6e6] text-primary duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]"
+        } `}
+      >
+        All ({options?.allCounts})
+      </button>
+
+      {options?.filters &&
+        options.filters.map((item) => (
+          <button
+            onClick={() => setFilter(item.name)}
+            id={item.name}
+            className={`rounded-[40px] px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] ${
+              filter == item.name
+                ? "bg-primary text-primary-foreground"
+                : "bg-[#e5e6e6] text-primary duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]"
+            } `}
+          >
+            {item.name} ({item.count})
+          </button>
+        ))}
+    </div>
+  );
+};
+
+const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
+  return (
+    <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
+      {options?.techs &&
+        options.techs.map((item) => (
+          <li className="w-full flex-flex-col">
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-lg rounded-md p-[15px]">
+              <div className="w-full h-full overflow-hidden rounded-md shadow-md">
+                <Image
+                  className="w-full h-full hover:scale-105 duration-150 object-cover"
+                  src={item.url}
+                  alt={item.title}
+                  width={200}
+                  height={100}
+                />
+              </div>
+            </div>
+            <div className="flex flex-col px-[5px]">
+              <h3 className="pt-[4px]">{item.title}</h3>
+              {/* <div className="text-t2-lg msm:text-t2-sm text-t2-c">param</div> */}
+              <div className="flex overflow-hidden overflow-x-scroll">
+                {item.workFilter.map((i) => (
+                  <>
+                    <button className="cursor-default text-[10px] mx-[3px] rounded-full py-[5px] px-[10px] bg-[#e5e6e6]">
+                      {i.name}
+                    </button>
+                  </>
+                ))}
+              </div>
+              <a href={item.url} target="_blank">
+                <Button variant="secondary" className="w-full mt-[5px]">
+                  Github
+                </Button>
+              </a>
+            </div>
+          </li>
+        ))}
+    </ul>
   );
 };

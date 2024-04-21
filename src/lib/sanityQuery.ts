@@ -40,10 +40,10 @@ export const allWorkQuery = groq`{
 
 export type IWorkQuery = {
   allCounts: number;
-  techs: IWork[];
+  techs: IWorkCard[];
   filters: IWorkFilter[];
 };
-type IWork = {
+type IWorkCard = {
   title: string;
   url: string;
   link: string;
