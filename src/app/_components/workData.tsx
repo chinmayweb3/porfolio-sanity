@@ -1,11 +1,15 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-
-type IFilter = "all" | "typescript" | "golang" | "mysql";
+import { useEffect, useState } from "react";
 
 export const WorkData = () => {
-  const [filter, setFilter] = useState<IFilter>("all");
+  const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    (async () => {
+      // const resp = await introApi("contact");
+    })();
+  }, [filter]);
 
   return (
     <>
