@@ -72,6 +72,6 @@ export const optionWorkQuery = groq`{
   }
 }`;
 
-export const resumeQuery = groq`*[_type=="resume"]{
-  ...
+export const resumeQuery = groq`*[_type=="resume"][0]{
+  "resume":resume.asset->url
 }`;

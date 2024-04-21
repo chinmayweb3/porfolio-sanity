@@ -27,10 +27,6 @@ export const workApi = async (q: string): Promise<IWorkQuery> => {
 };
 
 export const resumeApi = async (): Promise<{ resume: string }> => {
-  const resp = await client.fetch(groq`*[_type=="resume"][0]{
-    "resume":resume.asset->url
-  }`);
-  console.log("r", resp);
-
+  const resp = await client.fetch(resumeQuery);
   return resp;
 };
