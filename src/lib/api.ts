@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { client } from "./sanityClient";
+import { client, writeClient } from "./sanityClient";
 import {
   IIntroQuery,
   IWorkQuery,
@@ -28,5 +28,24 @@ export const workApi = async (q: string): Promise<IWorkQuery> => {
 
 export const resumeApi = async (): Promise<{ resume: string }> => {
   const resp = await client.fetch(resumeQuery);
+  return resp;
+};
+
+export type IContactForm = {
+  name: string;
+  email: string;
+  description: string;
+};
+export const contactFormApi = async ({
+  name,
+  email,
+  description,
+}: IContactForm) => {
+  const resp = await writeClient.create({
+    _type: "contact",
+    name,
+    email,
+    description,
+  });
   return resp;
 };
