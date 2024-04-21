@@ -24,6 +24,7 @@ export const allWorkQuery = groq`{
   "allCounts":count(*[_type=="workcard"]),
 
   "techs":*[_type=="workcard"]{
+    "id":_id,
     "title":projectname,
     "url":projectimage.asset->url,
     "link":githublink,
@@ -33,6 +34,7 @@ export const allWorkQuery = groq`{
   },
   
   "filters":*[_type=="workfilter"]{
+    "id":_id,
     name,
     "count":count(*[_type=="workcard" && ^._id in tech[]->_id])
   }
@@ -44,12 +46,14 @@ export type IWorkQuery = {
   filters: IWorkFilter[];
 };
 type IWorkCard = {
+  id: string;
   title: string;
   url: string;
   link: string;
   workFilter: IWorkFilter[];
 };
 type IWorkFilter = {
+  id: string;
   name: string;
   count: number;
 };
@@ -58,6 +62,7 @@ export const optionWorkQuery = groq`{
   "allCounts":count(*[_type=="workcard"]),
 
   "techs":*[_type=="workcard" && $q in tech[]->name]{
+    "id":_id,
     "title":projectname,
     "url":projectimage.asset->url,
     "link":githublink,
@@ -67,6 +72,7 @@ export const optionWorkQuery = groq`{
   },
   
   "filters":*[_type=="workfilter"]{
+    "id":_id,
     name,
     "count":count(*[_type=="workcard" && ^._id in tech[]->_id])
   }

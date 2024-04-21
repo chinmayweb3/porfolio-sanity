@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { introApi } from "@/lib/api";
+import { client } from "@/lib/sanityClient";
 import React from "react";
+import ContactField from "./contactField";
 
 const ContactSection = async () => {
   const resp = await introApi("contact");
@@ -34,29 +36,7 @@ const ContactSection = async () => {
         </p>
 
         <div className="w-full grid grid-cols-[1.3fr_1fr] mlg:grid-cols-1 gap-[50px] mlg:gap-[60px] items-center pt-[50px] msm:pt-[30px] px-[50px] msm:px-[20px]">
-          <div className="flex flex-col gap-[20px]">
-            <Input
-              className="focus-visible:ring-offset-0 msm:text-center"
-              type="text"
-              placeholder="Name"
-            />
-            <Input
-              className="focus-visible:ring-offset-0 msm:text-center"
-              type="email"
-              placeholder="Email"
-            />
-            <Textarea
-              rows={5}
-              className="focus-visible:ring-offset-0 msm:text-center"
-              placeholder="Description"
-            />
-            <Button
-              className="tracking-wider w-fit px-[80px] msm:w-full"
-              type="submit"
-            >
-              SUBMIT
-            </Button>
-          </div>
+          <ContactField />
           <div className=" text-center pb-[60px] mmd:pb-0">
             <h4 className="text-[36px] msm:text-t-sm">Let's Talk</h4>
             <p className="text-t2-c font-semibold">

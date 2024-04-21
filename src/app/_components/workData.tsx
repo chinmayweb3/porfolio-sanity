@@ -1,4 +1,5 @@
 "use client";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { workApi } from "@/lib/api";
 import { IWorkQuery } from "@/lib/sanityQuery";
@@ -53,7 +54,7 @@ const WorkFilter = ({
         options.filters.map((item) => (
           <button
             onClick={() => setFilter(item.name)}
-            id={item.name}
+            key={item.id}
             className={`rounded-[40px] px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] ${
               filter == item.name
                 ? "bg-primary text-primary-foreground"
@@ -72,7 +73,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
     <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
       {options?.techs &&
         options.techs.map((item) => (
-          <li className="w-full flex-flex-col">
+          <li key={item.id} className="w-full flex-flex-col">
             <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-lg rounded-md p-[15px]">
               <div className="w-full h-full overflow-hidden rounded-md shadow-md">
                 <Image
@@ -86,14 +87,18 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
             </div>
             <div className="flex flex-col px-[5px]">
               <h3 className="pt-[4px]">{item.title}</h3>
-              {/* <div className="text-t2-lg msm:text-t2-sm text-t2-c">param</div> */}
-              <div className="flex overflow-hidden overflow-x-scroll">
+              <div className="flex gap-[5px] py-[3px] overflow-hidden overflow-x-scroll">
+                {/* <button className="cursor-default text-[10px] mx-[3px] rounded-full py-[5px] px-[10px] bg-[#e5e6e6]">
+                    {i.name}
+                  </button> */}
                 {item.workFilter.map((i) => (
-                  <>
-                    <button className="cursor-default text-[10px] mx-[3px] rounded-full py-[5px] px-[10px] bg-[#e5e6e6]">
-                      {i.name}
-                    </button>
-                  </>
+                  <Badge
+                    className="rounded-full text-[10px] font-normal"
+                    key={i.id + i.name}
+                    variant={"secondary"}
+                  >
+                    {i.name}
+                  </Badge>
                 ))}
               </div>
               <a href={item.url} target="_blank">
