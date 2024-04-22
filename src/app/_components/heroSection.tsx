@@ -1,23 +1,33 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { introApi } from "@/lib/api";
 import { IIntroQuery } from "@/lib/sanityQuery";
+import { proUrl } from "@/lib/utils";
+
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
-function HeroSection() {
-  const [resp, setResp] = useState<IIntroQuery>();
+const getData = async () => {
+  console.log("process env", process.env);
 
-  useEffect(() => {
-    (async () => {
-      const r = await introApi("hero");
-      setResp(r);
-    })();
-  }, [resp]);
-  if (!resp) return <></>;
+  const resp = await fetch(proUrl("/api/intro?q=hero"));
+  const data = await resp.json();
+  console.log("json", data);
+
+  return resp;
+};
+
+async function HeroSection() {
+  // const [resp, setResp] = useState<IIntroQuery>();
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const r = await introApi("hero");
+  //     setResp(r);
+  //   })();
+  // }, [resp]);
+  // if (!resp) return <></>;
+  const resp = await getData();
+
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
-      <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
+      {/* <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
         <div className="flex-grow aspect-[1/1.3] mlg:w-[30%] mlg:mx-auto msm:w-[40%]">
           {resp?.imageurl && (
             <Image
@@ -55,7 +65,7 @@ function HeroSection() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
