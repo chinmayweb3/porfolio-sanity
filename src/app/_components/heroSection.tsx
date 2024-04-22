@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { introApi } from "@/lib/api";
+import { proUrl } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
 export const revalidate = 10; // revalidate at most every hour
 
-const HeroSection = async () => {
-  const resp = await introApi("hero");
+async function HeroSection() {
+  // const resp = await introApi("hero");
+  const re = await fetch(proUrl + "/api/intro?q=hero");
+  const resp = await re.json();
 
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
@@ -28,9 +31,7 @@ const HeroSection = async () => {
               __html: resp.title[0].children.map((c: any) => c.text).join(""),
             }}
             className="font-extrabold text-t-lg mlg:text-t-md msm:text-t-sm leading-tight"
-          >
-            {/* Hi, I'm Chinmay and <br /> I'm a Frontend Developer. */}
-          </h1>
+          ></h1>
           <p
             dangerouslySetInnerHTML={{
               __html: resp.para[0].children
@@ -38,11 +39,7 @@ const HeroSection = async () => {
                 .join(""),
             }}
             className="pt-[15px] w-[70%] msm:w-[90%] text-t2-lg msm:text-t2-sm leading-snug text-t2-c"
-          >
-            {/* I'm Junior Java Developer based in Gdansk, Poland. I have 1 year of
-            commercial experience and I specialize im creating web apps. I am
-            open for new opportunities and intresting projects. */}
-          </p>
+          ></p>
           <div className="flex items-center gap-[20px] pt-[15px]">
             <a href="#contact">
               <Button className="px-[40px] msm:px-[25px]">Contact me</Button>
@@ -57,6 +54,6 @@ const HeroSection = async () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection;

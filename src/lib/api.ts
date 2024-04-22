@@ -14,13 +14,7 @@ import {
 type IIntroArg = "hero" | "work" | "contact";
 
 export const introApi = async (q: IIntroArg): Promise<IIntroQuery> => {
-  const resp = await client.fetch(
-    IntroQuery,
-    { q },
-    {
-      cache: "reload",
-    }
-  );
+  const resp = await client.fetch(IntroQuery, { q });
   return resp;
 };
 
