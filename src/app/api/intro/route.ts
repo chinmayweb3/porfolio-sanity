@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
 
     // const resp = await client.fetch(IntroQuery, { q: json["q"] });
 
-    console.log("this is resp");
+    console.log("this is resp\n\n\n\n");
 
     return new Response(JSON.stringify({ done: "submitted" }), {
       headers: {
@@ -24,13 +24,13 @@ export async function GET(req: NextRequest) {
       status: 200,
     });
   } catch (err) {
-    //  new Response(
-    //   JSON.stringify({ error: "not started", message: err }),
-    //   {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
+    console.log("this is error\n\n\n\n", err);
+
+    new Response(JSON.stringify({ error: "not started", message: err }), {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   }
 }

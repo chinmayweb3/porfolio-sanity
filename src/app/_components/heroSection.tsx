@@ -7,7 +7,7 @@ const getData = async () => {
   console.log("process env", process.env["CF_PAGES_URL"]);
 
   const resp = await fetch(proUrl("/api/intro?q=hero"));
-  const data = await resp.json();
+  const data = await resp.text();
   console.log("json", data);
 
   return resp;
