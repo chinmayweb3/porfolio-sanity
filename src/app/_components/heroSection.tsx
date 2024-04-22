@@ -5,19 +5,18 @@ import Image from "next/image";
 import React from "react";
 
 // export const revalidate = 0; // revalidate at most every hour
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 const getData = async () => {
   const re = await fetch(`${proUrl}/api/intro?q=hero`);
   const j = await re.json();
-  console.log(j);
+  console.log("resp", j);
   return j;
 };
 
 async function HeroSection() {
-  console.log(process.env);
-  const resp = await introApi("hero");
-  // const resp = await getData();
+  // const resp = await introApi("hero");
+  const resp = await getData();
 
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">

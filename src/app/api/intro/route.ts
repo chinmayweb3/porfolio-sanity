@@ -7,7 +7,15 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const q = req.nextUrl.searchParams.get("q");
 
-  const resp = await client.fetch(IntroQuery, { q });
+  const resp = await client.fetch(
+    IntroQuery,
+    { q },
+    {
+      next: {
+        revalidate: 0,
+      },
+    }
+  );
 
   //   console.log("this is resp", resp);
 

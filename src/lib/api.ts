@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { client, writeClient } from "./sanityClient";
 import {
   IIntroQuery,
