@@ -89,15 +89,12 @@ export type IWhatIKnowQuery = {
 type IWhatIKnowCard = {
   id: string;
   title: string;
-  tech: ITech[];
-};
-type ITech = {
-  name: string;
+  tech: string[];
 };
 
 export const whatIKnowQuery = groq`{
   "intro":*[_type=="alltitle" && name=="iknow"][0]{
-      name,
+      title,
       para
   },
   
