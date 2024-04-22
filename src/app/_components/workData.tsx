@@ -74,7 +74,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
       {options?.techs &&
         options.techs.map((item) => (
           <li key={item.id} className="w-full flex-flex-col">
-            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-lg rounded-md p-[15px]">
+            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[10px]">
               <div className="w-full h-full overflow-hidden rounded-md shadow-md">
                 <Image
                   className="w-full h-full hover:scale-105 duration-150 object-cover"
@@ -93,7 +93,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                   </button> */}
                 {item.workFilter.map((i) => (
                   <Badge
-                    className="rounded-full text-[10px] font-normal"
+                    className="rounded-full text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
                     key={i.id + i.name}
                     variant={"secondary"}
                   >
@@ -101,7 +101,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                   </Badge>
                 ))}
               </div>
-              <a href={item.url} target="_blank">
+              <a href={item.link} target="_blank">
                 <Button variant="secondary" className="w-full mt-[5px]">
                   Github
                 </Button>

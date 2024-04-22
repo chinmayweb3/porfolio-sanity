@@ -16,7 +16,7 @@ const WhatIKnowSection = async () => {
   return (
     <div
       id="whatiknow"
-      className="w-full  contain-in-section py-[75px] mlg:py-[50px] msm:py-[30px]"
+      className="w-full contain-in-section py-[75px] mlg:py-[50px] msm:py-[30px]"
     >
       <div className="flex flex-col items-center">
         <h2

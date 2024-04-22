@@ -10,11 +10,11 @@ export const revalidate = 10;
 export default async function Home() {
   return (
     <main className="flex flex-col w-full">
-      {/* <HeroSection /> */}
+      <HeroSection />
       <WhatIKnowSection />
-      {/* <WorkSection /> */}
-      {/* <ContactSection /> */}
-      {/* <ResumeSection /> */}
+      <WorkSection />
+      <ContactSection />
+      <ResumeSection />
       <Toaster />
     </main>
   );
