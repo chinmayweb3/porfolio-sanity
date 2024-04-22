@@ -4,7 +4,7 @@ import { proUrl } from "@/lib/utils";
 import Image from "next/image";
 
 const getData = async () => {
-  console.log("process env", process.env);
+  console.log("process env", process.env["CF_PAGES_URL"]);
 
   const resp = await fetch(proUrl("/api/intro?q=hero"));
   const data = await resp.json();

@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        // "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
       },
       status: 200,
     });
