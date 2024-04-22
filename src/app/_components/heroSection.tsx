@@ -14,6 +14,7 @@ const getData = async () => {
 };
 
 async function HeroSection() {
+  console.log(process.env);
   const resp = await introApi("hero");
   // const resp = await getData();
 
