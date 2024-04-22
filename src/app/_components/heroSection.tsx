@@ -4,7 +4,8 @@ import { proUrl } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
-export const revalidate = 0; // revalidate at most every hour
+// export const revalidate = 0; // revalidate at most every hour
+export const dynamic = "force-dynamic";
 
 const getData = async () => {
   const re = await fetch(`${proUrl}/api/intro?q=hero`);
