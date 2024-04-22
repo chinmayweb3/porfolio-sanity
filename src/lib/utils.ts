@@ -7,5 +7,5 @@ export function cn(...inputs: ClassValue[]) {
 
 export const proUrl =
   process.env.NODE_ENV === "production"
-    ? "https://chinmayport.pages.dev/"
+    ? "https://chinmayport.pages.dev"
     : "http://localhost:3000";
