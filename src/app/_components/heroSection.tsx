@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { introApi } from "@/lib/api";
 import { IIntroQuery } from "@/lib/sanityQuery";
 import { proUrl } from "@/lib/utils";
 
@@ -32,7 +33,8 @@ async function HeroSection() {
   //   })();
   // }, [resp]);
   // if (!resp) return <></>;
-  const resp = await getData();
+  // const resp = await getData();
+  const resp = await introApi("hero");
 
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
