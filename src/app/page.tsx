@@ -3,18 +3,18 @@ import WorkSection from "./_components/workSection";
 import ContactSection from "./_components/contactSection";
 import ResumeSection from "./_components/resumeSection";
 import { Toaster } from "@/components/ui/toaster";
-import WhatIKnowSection from "./_components/WhatIKnowSection";
+import WhatIKnowSection from "./_components/whatIKnowSection";
 
 export const revalidate = 10;
 
 export default async function Home() {
   return (
     <main className="flex flex-col w-full">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <WhatIKnowSection />
-      <WorkSection />
-      <ContactSection />
-      <ResumeSection />
+      {/* <WorkSection /> */}
+      {/* <ContactSection /> */}
+      {/* <ResumeSection /> */}
       <Toaster />
     </main>
   );
