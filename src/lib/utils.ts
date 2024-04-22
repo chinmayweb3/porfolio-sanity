@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export const proUrl = (str: string) => {
   if (process.env.NODE_ENV === "production") {
-    return process.env["BASE_URL"] + str;
+    return process.env["CF_PAGES_URL"] + str;
   } else {
     return "http://localhost:3000" + str;
   }
