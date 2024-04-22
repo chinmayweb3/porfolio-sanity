@@ -8,7 +8,7 @@ import ContactField from "./contactField";
 
 export const runtime = "edge";
 
-export const revalidate = 10; // revalidate at most every hour
+// export const revalidate = 10; // revalidate at most every hour
 
 const ContactSection = async () => {
   const resp = await introApi("contact");
