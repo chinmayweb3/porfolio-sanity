@@ -6,13 +6,15 @@ import Image from "next/image";
 
 export const runtime = "edge";
 
-export const revalidate = 0; // revalidate at most every hour
+export const revalidate = 10; // revalidate at most every hour
 
 const getData = async () => {
   console.log("process env", process.env["CF_PAGES_URL"]);
 
   const resp = await fetch(proUrl("/api/intro?q=hero"), {
-    cache: "no-cache",
+    next: {
+      revalidate: 10,
+    },
   });
   const data: IIntroQuery = await resp.json();
   console.log("json", data);
