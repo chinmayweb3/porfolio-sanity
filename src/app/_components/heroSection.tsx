@@ -9,7 +9,7 @@ export const runtime = "edge";
 export const revalidate = 10; // revalidate at most every hour
 
 const getData = async () => {
-  console.log("process env", process.env["CF_PAGES_URL"]);
+  // console.log("process env", process.env["CF_PAGES_URL"]);
 
   const resp = await fetch(proUrl("/api/intro?q=hero"), {
     next: {

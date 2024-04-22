@@ -11,10 +11,10 @@ export default async function Home() {
   return (
     <main className="flex flex-col w-full">
       <HeroSection />
-      {/* <WhatIKnowSection />
+      <WhatIKnowSection />
       <WorkSection />
       <ContactSection />
-      <ResumeSection /> */}
+      <ResumeSection />
       <Toaster />
     </main>
   );

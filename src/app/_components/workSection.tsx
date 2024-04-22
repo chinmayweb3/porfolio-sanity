@@ -2,7 +2,9 @@ import { introApi } from "@/lib/api";
 import React from "react";
 import { WorkData } from "./workData";
 
-export const revalidate = 3600; // revalidate at most every hour
+export const runtime = "edge";
+
+export const revalidate = 10; // revalidate at most every hour
 
 const WorkSection = async () => {
   const resp = await introApi("work");
