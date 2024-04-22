@@ -11,7 +11,6 @@ import React from "react";
 
 const WhatIKnowSection = async () => {
   const resp = await whatIKnowApi();
-  console.log("resp", resp);
 
   return (
     <div
