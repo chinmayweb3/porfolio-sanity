@@ -13,7 +13,7 @@ function HeroSection() {
       const r = await introApi("hero");
       setResp(r);
     })();
-  }, []);
+  }, [resp]);
   if (!resp) return <></>;
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
