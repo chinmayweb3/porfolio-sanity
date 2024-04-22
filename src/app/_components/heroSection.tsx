@@ -6,6 +6,8 @@ import Image from "next/image";
 
 export const runtime = "edge";
 
+export const revalidate = 0; // revalidate at most every hour
+
 const getData = async () => {
   console.log("process env", process.env["CF_PAGES_URL"]);
 
