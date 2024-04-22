@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
 
     console.log("this is resp\n\n\n\n");
 
-    return new Response(JSON.stringify({ done: "submitted" }), {
+    return new NextResponse(JSON.stringify({ done: "submitted" }), {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
   } catch (err) {
     console.log("this is error\n\n\n\n", err);
 
-    new Response(JSON.stringify({ error: "not started", message: err }), {
+    new NextResponse(JSON.stringify({ error: "not started", message: err }), {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
