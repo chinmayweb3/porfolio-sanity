@@ -1,5 +1,3 @@
-// export const runtime = "edge";
-
 import { client, writeClient } from "./sanityClient";
 import {
   IIntroQuery,
@@ -14,7 +12,7 @@ import {
 
 type IIntroArg = "hero" | "work" | "contact";
 
-const nextRevalidate = { next: { revalidate: 10 } };
+const nextRevalidate = { next: { revalidate: 30 } };
 
 export const introApi = async (q: IIntroArg): Promise<IIntroQuery> => {
   const resp = await client.fetch(IntroQuery, { q }, nextRevalidate);

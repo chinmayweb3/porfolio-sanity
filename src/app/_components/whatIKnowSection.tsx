@@ -11,8 +11,6 @@ import React from "react";
 
 export const runtime = "edge";
 
-// export const revalidate = 10; // revalidate at most every hour
-
 const WhatIKnowSection = async () => {
   const resp = await whatIKnowApi();
 

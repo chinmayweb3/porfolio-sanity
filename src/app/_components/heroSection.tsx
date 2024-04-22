@@ -1,37 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { introApi } from "@/lib/api";
-import { IIntroQuery } from "@/lib/sanityQuery";
-import { proUrl } from "@/lib/utils";
 
 import Image from "next/image";
 
 export const runtime = "edge";
 
-// const getData = async () => {
-//   // console.log("process env", process.env["CF_PAGES_URL"]);
-
-//   const resp = await fetch(proUrl("/api/intro?q=hero"), {
-//     next: {
-//       revalidate: 10,
-//     },
-//   });
-//   const data: IIntroQuery = await resp.json();
-//   console.log("json", data);
-
-//   return data;
-// };
-
 async function HeroSection() {
-  // const [resp, setResp] = useState<IIntroQuery>();
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const r = await introApi("hero");
-  //     setResp(r);
-  //   })();
-  // }, [resp]);
-  // if (!resp) return <></>;
-  // const resp = await getData();
   const resp = await introApi("hero");
 
   return (
