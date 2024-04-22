@@ -1,28 +1,25 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { introApi } from "@/lib/api";
-import { proUrl } from "@/lib/utils";
+import { IIntroQuery } from "@/lib/sanityQuery";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const revalidate = 0; // revalidate at most every hour
-// export const dynamic = "force-dynamic";
+function HeroSection() {
+  const [resp, setResp] = useState<IIntroQuery>();
 
-const getData = async () => {
-  const re = await fetch(`${proUrl}/api/intro?q=hero`);
-  const j = await re.json();
-  console.log("resp", j);
-  return j;
-};
-
-async function HeroSection() {
-  // const resp = await introApi("hero");
-  const resp = await getData();
-
+  useEffect(() => {
+    (async () => {
+      const r = await introApi("hero");
+      setResp(r);
+    })();
+  }, []);
+  if (!resp) return <></>;
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
       <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
         <div className="flex-grow aspect-[1/1.3] mlg:w-[30%] mlg:mx-auto msm:w-[40%]">
-          {resp.imageurl && (
+          {resp?.imageurl && (
             <Image
               className="rounded-sm shadow-2xl w-full h-full object-cover"
               src={resp.imageurl}
@@ -35,7 +32,7 @@ async function HeroSection() {
         <div className="flex flex-col flex-grow mlg:items-center msm:text-center">
           <h1
             dangerouslySetInnerHTML={{
-              __html: resp.title[0].children.map((c: any) => c.text).join(""),
+              __html: resp?.title[0].children.map((c: any) => c.text).join(""),
             }}
             className="font-extrabold text-t-lg mlg:text-t-md msm:text-t-sm leading-tight"
           ></h1>

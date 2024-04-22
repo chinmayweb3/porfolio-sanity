@@ -5,9 +5,6 @@ import ResumeSection from "./_components/resumeSection";
 import { Toaster } from "@/components/ui/toaster";
 import WhatIKnowSection from "./_components/whatIKnowSection";
 
-// export const revalidate = 0;
-// export const dynamic = "force-dynamic";
-
 export default async function Home() {
   return (
     <main className="flex flex-col w-full">
