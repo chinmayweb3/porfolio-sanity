@@ -18,7 +18,7 @@ export const introApi = async (q: IIntroArg): Promise<IIntroQuery> => {
     IntroQuery,
     { q },
     {
-      cache: "no-cache",
+      cache: "reload",
     }
   );
   return resp;
