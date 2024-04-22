@@ -81,3 +81,30 @@ export const optionWorkQuery = groq`{
 export const resumeQuery = groq`*[_type=="resume"][0]{
   "resume":resume.asset->url
 }`;
+
+export type IWhatIKnowQuery = {
+  intro: IIntroQuery;
+  iknow: IWhatIKnowCard[];
+};
+type IWhatIKnowCard = {
+  id: string;
+  title: string;
+  tech: ITech[];
+};
+type ITech = {
+  name: string;
+};
+
+export const whatIKnowQuery = groq`{
+  "intro":*[_type=="alltitle" && name=="iknow"][0]{
+      name,
+      para
+  },
+  
+  "iknow":*[_type=="whatiknow"]{
+      "id":_id,
+      title,
+      tech
+    }
+}
+`;
