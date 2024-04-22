@@ -9,7 +9,11 @@ export const runtime = "edge";
 const getData = async () => {
   console.log("process env", process.env["CF_PAGES_URL"]);
 
-  const resp = await fetch(proUrl("/api/intro?q=hero"));
+  const resp = await fetch(proUrl("/api/intro?q=hero"), {
+    next: {
+      revalidate: 10,
+    },
+  });
   const data: IIntroQuery = await resp.json();
   console.log("json", data);
 
