@@ -12,9 +12,7 @@ const getData = async () => {
   console.log("process env", process.env["CF_PAGES_URL"]);
 
   const resp = await fetch(proUrl("/api/intro?q=hero"), {
-    next: {
-      revalidate: 10,
-    },
+    cache: "no-cache",
   });
   const data: IIntroQuery = await resp.json();
   console.log("json", data);
