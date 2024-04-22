@@ -7,15 +7,17 @@ export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
   try {
-    // const q = req.nextUrl.searchParams.get("q");
+    const q = req.nextUrl.searchParams.get("q");
     // const json = await req.json();
     // console.log("this is json", json);
 
+    const resp = await client.fetch(IntroQuery, { q });
     // const resp = await client.fetch(IntroQuery, { q: json["q"] });
 
     console.log("this is resp\n\n\n\n");
 
-    return new NextResponse(JSON.stringify({ done: "submitted" }), {
+    // return new NextResponse(JSON.stringify({ done: "submitted" }), {
+    return new NextResponse(JSON.stringify(resp), {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",

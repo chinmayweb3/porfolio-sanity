@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "./_components/navbar";
 
+export const runtime = "edge";
+
 const inter = Inter({
   weight: ["500"],
   subsets: ["latin"],
