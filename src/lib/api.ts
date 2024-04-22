@@ -11,6 +11,8 @@ import {
   whatIKnowQuery,
 } from "./sanityQuery";
 
+export const revalidate = 0;
+
 type IIntroArg = "hero" | "work" | "contact";
 
 export const introApi = async (q: IIntroArg): Promise<IIntroQuery> => {
