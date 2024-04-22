@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
     IntroQuery,
     { q },
     {
+      cache: "no-cache",
       next: {
         revalidate: 0,
       },
