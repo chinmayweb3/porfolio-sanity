@@ -1,4 +1,4 @@
-export const runtime = "edge";
+// export const runtime = "edge";
 
 import { client, writeClient } from "./sanityClient";
 import {
@@ -14,68 +14,30 @@ import {
 
 type IIntroArg = "hero" | "work" | "contact";
 
+const nextRevalidate = { next: { revalidate: 10 } };
+
 export const introApi = async (q: IIntroArg): Promise<IIntroQuery> => {
-  const resp = await client.fetch(
-    IntroQuery,
-    { q },
-    {
-      next: {
-        revalidate: 0,
-      },
-    }
-  );
+  const resp = await client.fetch(IntroQuery, { q }, nextRevalidate);
   return resp;
 };
 
 export const whatIKnowApi = async (): Promise<IWhatIKnowQuery> => {
-  const resp = await client.fetch(
-    whatIKnowQuery,
-    {},
-    {
-      next: {
-        revalidate: 0,
-      },
-    }
-  );
+  const resp = await client.fetch(whatIKnowQuery, {}, nextRevalidate);
   return resp;
 };
 
 export const workApi = async (q: string): Promise<IWorkQuery> => {
   if ("all" == q) {
-    const resp = await client.fetch(
-      allWorkQuery,
-      {},
-      {
-        next: {
-          revalidate: 0,
-        },
-      }
-    );
+    const resp = await client.fetch(allWorkQuery, {}, nextRevalidate);
     return resp;
   } else {
-    const resp = await client.fetch(
-      optionWorkQuery,
-      { q },
-      {
-        next: {
-          revalidate: 0,
-        },
-      }
-    );
+    const resp = await client.fetch(optionWorkQuery, { q }, nextRevalidate);
     return resp;
   }
 };
 
 export const resumeApi = async (): Promise<{ resume: string }> => {
-  const resp = await client.fetch(
-    resumeQuery,
-    {},
-    {
-      next: {
-        revalidate: 0,
-      },
-    }
-  );
+  const resp = await client.fetch(resumeQuery, {}, nextRevalidate);
   return resp;
 };
 
