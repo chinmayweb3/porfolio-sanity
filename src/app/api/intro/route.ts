@@ -8,7 +8,12 @@ export async function GET(req: NextRequest) {
   const q = req.nextUrl.searchParams.get("q");
 
   const resp = await client.fetch(IntroQuery, { q });
-  //   return resp;
 
-  return new NextResponse(JSON.stringify(resp));
+  //   console.log("this is resp", resp);
+
+  return new Response(JSON.stringify(resp), {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }

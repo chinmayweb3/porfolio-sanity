@@ -6,16 +6,20 @@ import React from "react";
 
 export const revalidate = 10; // revalidate at most every hour
 
-async function HeroSection() {
-  // const resp = await introApi("hero");
-  const re = await fetch(proUrl + "/api/intro?q=hero");
-  const resp = await re.json();
+const getData = async () => {
+  const re = await fetch(`${proUrl}/api/intro?q=hero`);
+  const j = await re.json();
+  console.log(j);
+  return j;
+};
 
-  console.log("process", process.env);
+async function HeroSection() {
+  const resp = await introApi("hero");
+  // const resp = await getData();
 
   return (
     <section className="w-full h-full pt-[150px] msm:pt-[110px] pb-[75px] mlg:pb-[50px] msm:pb-[30px] flex items-center contain-in-section">
-      {/* <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
+      <div className="w-full grid grid-cols-[1fr_1.45fr] mlg:grid-cols-1 gap-[40px] msm:gap-[30px] items-center">
         <div className="flex-grow aspect-[1/1.3] mlg:w-[30%] mlg:mx-auto msm:w-[40%]">
           {resp.imageurl && (
             <Image
@@ -53,7 +57,7 @@ async function HeroSection() {
             </a>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }
