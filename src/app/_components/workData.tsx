@@ -90,8 +90,8 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
               </div>
             </div>
             {/* <div className="flex flex-col px-[5px]"> */}
-            <h3 className="pt-[4px]">{item.title}</h3>
-            <div className="flex-grow flex flex-wrap gap-[5px] py-[3px]">
+            <h3 className="px-[5px] pt-[4px]">{item.title}</h3>
+            <div className="px-[5px] flex-grow flex flex-wrap gap-[5px] py-[3px]">
               {item.workFilter.map((i) => (
                 <Badge
                   className="rounded-full h-min text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
@@ -102,8 +102,11 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                 </Badge>
               ))}
             </div>
-            <a href={item.link} target="_blank">
-              <Button variant="secondary" className="w-full mt-[5px]">
+            <a className="px-[5px]" href={item.link} target="_blank">
+              <Button
+                variant="secondary"
+                className="w-full mt-[5px] xl:hover:shadow-sm duration-150 xl:hover:bg-[#e8e8e8]"
+              >
                 Github
               </Button>
             </a>
