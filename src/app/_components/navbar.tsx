@@ -6,16 +6,23 @@ import {
   SheetFooter,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { GithubIcon, LinkedinIcon } from "lucide-react";
+import { Assistant } from "next/font/google";
 import React from "react";
+
+const inter = Assistant({
+  weight: ["700"],
+  subsets: ["latin"],
+});
 
 const Navbar = () => {
   return (
     <nav className="h-top w-full fixed contain-in bg-background z-[10] shadow-sm">
       <div className="h-full max-w-[19200px] mx-auto grid grid-cols-3 mmd:grid-cols-2 items-center bg-background">
-        <h1 className="font-black font-mono">CS</h1>
+        <h1 className={cn("font-semibold tracking-widest")}>CHINMAY</h1>
         <ul className="flex items-center mx-auto mmd:hidden">
           <li>
             <a href="#work">
