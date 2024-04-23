@@ -40,11 +40,13 @@ const WorkFilter = ({
   return (
     <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px]">
       <button
-        onClick={() => setFilter("all")}
-        className={`rounded-[40px] px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] ${
+        onClick={() => "all" !== filter && setFilter("all")}
+        className={`rounded-[40px] px-[20px] msm:px-[10px] py-[8px] msm:py-[5px] text-[12px] msm:text-[10px] ${
           "all" === filter
-            ? "bg-primary text-primary-foreground"
-            : "bg-[#e5e6e6] text-primary duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]"
+            ? `bg-primary text-primary-foreground ${
+                "all" === filter ? "cursor-default" : ""
+              }`
+            : "bg-[#e5e6e6] text-primary duration-150 xl:hover:bg-[#c8cccf] hover:shadow-sm mlg:active:bg-[#c8cccf]"
         } `}
       >
         All ({options?.allCounts})
@@ -53,12 +55,14 @@ const WorkFilter = ({
       {options?.filters &&
         options.filters.map((item) => (
           <button
-            onClick={() => setFilter(item.name)}
+            onClick={() => item.name !== filter && setFilter(item.name)}
             key={item.id}
-            className={`rounded-[40px] px-[20px] msm:px-[15px] py-[8px] text-[12px] msm:text-[10px] ${
+            className={`rounded-[40px] px-[20px] msm:px-[10px] py-[8px] msm:py-[5px] text-[12px] msm:text-[10px] ${
               filter == item.name
-                ? "bg-primary text-primary-foreground"
-                : "bg-[#e5e6e6] text-primary duration-150 xl:hover:bg-[#c8cccf] mlg:active:bg-[#c8cccf]"
+                ? `bg-primary text-primary-foreground ${
+                    item.name === filter ? "cursor-default" : ""
+                  }`
+                : "bg-[#e5e6e6] text-primary duration-150 xl:hover:bg-[#c8cccf] hover:shadow-sm mlg:active:bg-[#c8cccf]"
             } `}
           >
             {item.name} ({item.count})
@@ -73,9 +77,9 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
     <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
       {options?.techs &&
         options.techs.map((item) => (
-          <li key={item.id} className="w-full flex-flex-col">
-            <div className="w-full aspect-[2/1.3] bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[10px]">
-              <div className="w-full h-full overflow-hidden rounded-md shadow-md">
+          <li key={item.id} className="w-full flex flex-col">
+            <div className="w-full bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[10px]">
+              <div className="w-full aspect-[2/1.3] h-full overflow-hidden rounded-md shadow-md">
                 <Image
                   className="w-full h-full hover:scale-105 duration-150 object-cover"
                   src={item.url}
@@ -85,28 +89,25 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                 />
               </div>
             </div>
-            <div className="flex flex-col px-[5px]">
-              <h3 className="pt-[4px]">{item.title}</h3>
-              <div className="flex gap-[5px] py-[3px] overflow-hidden overflow-x-scroll">
-                {/* <button className="cursor-default text-[10px] mx-[3px] rounded-full py-[5px] px-[10px] bg-[#e5e6e6]">
-                    {i.name}
-                  </button> */}
-                {item.workFilter.map((i) => (
-                  <Badge
-                    className="rounded-full text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
-                    key={i.id + i.name}
-                    variant={"secondary"}
-                  >
-                    {i.name}
-                  </Badge>
-                ))}
-              </div>
-              <a href={item.link} target="_blank">
-                <Button variant="secondary" className="w-full mt-[5px]">
-                  Github
-                </Button>
-              </a>
+            {/* <div className="flex flex-col px-[5px]"> */}
+            <h3 className="pt-[4px]">{item.title}</h3>
+            <div className="flex-grow flex flex-wrap gap-[5px] py-[3px]">
+              {item.workFilter.map((i) => (
+                <Badge
+                  className="rounded-full h-min text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
+                  key={i.id + i.name}
+                  variant={"secondary"}
+                >
+                  {i.name}
+                </Badge>
+              ))}
             </div>
+            <a href={item.link} target="_blank">
+              <Button variant="secondary" className="w-full mt-[5px]">
+                Github
+              </Button>
+            </a>
+            {/* </div> */}
           </li>
         ))}
     </ul>
