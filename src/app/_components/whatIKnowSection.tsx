@@ -30,17 +30,19 @@ const WhatIKnowSection = async () => {
         >
           {/* What I Know */}
         </h2>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: resp.intro.para[0].children
-              .map((child: any) => child.text)
-              .join(""),
-          }}
-          className="text-t2-lg msm:text-t2-sm text-t2-c text-center leading-tight"
-        >
-          {/* Check my commercial and non commercial projects. <br /> If you have
+        {resp.intro?.para && (
+          <p
+            dangerouslySetInnerHTML={{
+              __html: resp.intro.para[0].children
+                .map((child: any) => child.text)
+                .join(""),
+            }}
+            className="text-t2-lg msm:text-t2-sm text-t2-c text-center leading-tight"
+          >
+            {/* Check my commercial and non commercial projects. <br /> If you have
           any questions feel free to ask me for more information. */}
-        </p>
+          </p>
+        )}
         <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px] w-full">
           {resp?.iknow &&
             resp.iknow.map((item) => (

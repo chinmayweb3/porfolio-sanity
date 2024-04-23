@@ -25,17 +25,19 @@ const ContactSection = async () => {
         >
           {/* Contact */}
         </h2>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: resp.para[0].children
-              .map((child: any) => child.text)
-              .join(""),
-          }}
-          className="text-t2-lg msm:text-t2-sm text-t2-c text-center leading-tight"
-        >
-          {/* Check my commercial and non commercial projects. <br /> If you have
+        {resp?.para && (
+          <p
+            dangerouslySetInnerHTML={{
+              __html: resp.para[0].children
+                .map((child: any) => child.text)
+                .join(""),
+            }}
+            className="text-t2-lg msm:text-t2-sm text-t2-c text-center leading-tight"
+          >
+            {/* Check my commercial and non commercial projects. <br /> If you have
           any questions feel free to ask me for more information. */}
-        </p>
+          </p>
+        )}
 
         <div className="w-full grid grid-cols-[1.3fr_1fr] mlg:grid-cols-1 gap-[50px] mlg:gap-[60px] items-center pt-[50px] msm:pt-[30px] px-[50px] msm:px-[20px]">
           <ContactField />
