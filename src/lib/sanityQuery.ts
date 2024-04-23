@@ -88,6 +88,7 @@ export type IWhatIKnowQuery = {
 };
 type IWhatIKnowCard = {
   id: string;
+  orderin: number;
   title: string;
   tech: string[];
 };
@@ -98,8 +99,9 @@ export const whatIKnowQuery = groq`{
       para
   },
   
-  "iknow":*[_type=="whatiknow"]{
+  "iknow":*[_type=="whatiknow"] | order(orderin){
       "id":_id,
+      orderin,
       title,
       tech
     }
