@@ -79,7 +79,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
         options.techs.map((item) => (
           <li key={item.id} className="w-full flex flex-col">
             <div className="w-full bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[10px]">
-              <div className="w-full aspect-[2/1.3] h-full overflow-hidden rounded-md shadow-md">
+              <div className="w-full aspect-[2/1.3] overflow-hidden rounded-md shadow-md">
                 <Image
                   className="w-full h-full hover:scale-105 duration-150 object-cover"
                   src={item.url}
