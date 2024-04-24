@@ -74,11 +74,11 @@ const WorkFilter = ({
 
 const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
   return (
-    <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] bg-[#aaa] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
+    <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
       {options?.techs &&
         options.techs.map((item) => (
-          <li key={item.id} className="w-full bg-[#000]/90 h-min">
-            <div className="w-full bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[10px] bg-[#fbfbfb]/80">
+          <li key={item.id} className="w-full h-min">
+            <div className="w-full bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[8px]">
               <div className="w-full aspect-[2/1.3] overflow-hidden rounded-md shadow-md">
                 <Image
                   className="w-full h-full hover:scale-105 duration-150 object-cover"
@@ -89,9 +89,9 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                 />
               </div>
             </div>
-            <div className="flex sm:flex-grow flex-col px-[5px] bg-[#bbb]">
+            <div className="flex sm:flex-grow flex-col px-[5px] ">
               <h3 className="pt-[4px]">{item.title}</h3>
-              <div className="sm:flex-grow flex flex-wrap gap-[5px] py-[3px] bg-[#f1f1f1]">
+              <div className="sm:flex-grow flex flex-wrap gap-[5px] py-[3px]">
                 {item.workFilter.map((i) => (
                   <>
                     {/* <Badge
@@ -110,11 +110,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                   </>
                 ))}
               </div>
-              <a
-                className="mt-[5px] bg-[#000]/40"
-                href={item.link}
-                target="_blank"
-              >
+              <a className="mt-[5px] " href={item.link} target="_blank">
                 <Button
                   variant="secondary"
                   className="w-full xl:hover:shadow-sm duration-150 xl:hover:bg-[#e8e8e8]"
