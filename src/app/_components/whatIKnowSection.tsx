@@ -43,23 +43,23 @@ const WhatIKnowSection = async () => {
           any questions feel free to ask me for more information. */}
           </p>
         )}
-        <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px] w-full">
+        <div className="flex flex-wrap msm:h-fit justify-center gap-[10px] mt-[40px] msm:mt-[30px] w-full">
           {resp?.iknow &&
             resp.iknow.map((item) => (
               <Card
                 key={item.id}
                 className="basis-[28%] mlg:basis-[30%] msm:basis-[48%] "
               >
-                <CardHeader className="msm:p-[1rem_1rem_1.2rem]">
+                <CardHeader className="msm:p-[1rem_0.7rem_1.2rem]">
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="msm:p-[0_1rem_1rem] flex flex-wrap justify-start gap-x-[10px] gap-y-[8px]">
+                <CardContent className="msm:p-[0_0.7rem_1rem] flex flex-wrap justify-start gap-x-[10px] gap-y-[8px]">
                   {item?.tech &&
                     item.tech.map((tech) => (
                       <Badge
                         key={item.id + tech}
                         variant={"secondary"}
-                        className="rounded-full font-normal px-[15px] mlg:px-[10px] py-[4px] msm:py-[2px] text-[12px] bg-[#e5e6e6]"
+                        className="rounded-full font-normal px-[15px] mlg:px-[10px] py-[4px] msm:py-[2px] text-[12px] msm:text-[10px] bg-[#e5e6e6]"
                       >
                         {tech}
                       </Badge>
