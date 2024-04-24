@@ -16,6 +16,13 @@ const ContactField = () => {
   });
 
   const submit = async () => {
+    if (!form.name || !form.email) {
+      toast({
+        description: "Please fill all the fields.",
+        variant: "destructive",
+      });
+      return;
+    }
     await contactFormApi({
       name: form.name,
       description: form.description,
