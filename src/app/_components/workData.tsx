@@ -77,7 +77,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
     <ul className=" w-full grid grid-cols-3 msm:grid-cols-2 gap-[40px] mlg:gap-[25px] bg-[#aaa] msm:gap-[10px] mt-[30px] px-[50px] msm:px-[20px]">
       {options?.techs &&
         options.techs.map((item) => (
-          <li key={item.id} className="w-full flex flex-col bg-[#000]/90">
+          <li key={item.id} className="w-full bg-[#000]/90 h-min">
             <div className="w-full bg-gradient-work shadow-lg rounded-md p-[15px] msm:p-[10px] bg-[#fbfbfb]/80">
               <div className="w-full aspect-[2/1.3] overflow-hidden rounded-md shadow-md">
                 <Image
