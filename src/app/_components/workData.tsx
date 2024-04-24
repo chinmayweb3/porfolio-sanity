@@ -89,7 +89,7 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                 />
               </div>
             </div>
-            <div className="flex flex-grow flex-col px-[5px]">
+            <div className="flex sm:flex-grow flex-col px-[5px]">
               <h3 className="pt-[4px]">{item.title}</h3>
               <div className="sm:flex-grow flex flex-wrap gap-[5px] py-[3px]">
                 {item.workFilter.map((i) => (
