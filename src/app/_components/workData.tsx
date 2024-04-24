@@ -38,7 +38,7 @@ const WorkFilter = ({
     return <></>;
   }
   return (
-    <div className="flex flex-wrap justify-center gap-[10px] mt-[40px] msm:mt-[30px]">
+    <div className="flex flex-wrap justify-center gap-[10px] msm:gap-y-[5px] mt-[40px] msm:mt-[30px]">
       <button
         onClick={() => "all" !== filter && setFilter("all")}
         className={`rounded-[40px] px-[20px] msm:px-[10px] py-[8px] msm:py-[5px] text-[12px] msm:text-[10px] ${
@@ -89,28 +89,28 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                 />
               </div>
             </div>
-            {/* <div className="flex flex-col px-[5px]"> */}
-            <h3 className="px-[5px] pt-[4px]">{item.title}</h3>
-            <div className="px-[5px] flex-grow flex flex-wrap gap-[5px] py-[3px]">
-              {item.workFilter.map((i) => (
-                <Badge
-                  className="rounded-full h-min text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
-                  key={i.id + i.name}
-                  variant={"secondary"}
+            <div className="flex flex-grow flex-col px-[5px]">
+              <h3 className="pt-[4px]">{item.title}</h3>
+              <div className="flex-grow flex flex-wrap gap-[5px] py-[3px]">
+                {item.workFilter.map((i) => (
+                  <Badge
+                    className="rounded-full h-min text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
+                    key={i.id + i.name}
+                    variant={"secondary"}
+                  >
+                    {i.name}
+                  </Badge>
+                ))}
+              </div>
+              <a className="mt-[5px]" href={item.link} target="_blank">
+                <Button
+                  variant="secondary"
+                  className="w-full xl:hover:shadow-sm duration-150 xl:hover:bg-[#e8e8e8]"
                 >
-                  {i.name}
-                </Badge>
-              ))}
+                  Github
+                </Button>
+              </a>
             </div>
-            <a className="px-[5px]" href={item.link} target="_blank">
-              <Button
-                variant="secondary"
-                className="w-full mt-[5px] xl:hover:shadow-sm duration-150 xl:hover:bg-[#e8e8e8]"
-              >
-                Github
-              </Button>
-            </a>
-            {/* </div> */}
           </li>
         ))}
     </ul>
