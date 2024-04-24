@@ -45,7 +45,7 @@ const ContactSection = async () => {
             <h4 className="text-[36px] msm:text-t-sm">Let's Talk</h4>
             <p className="text-t2-c font-semibold">
               <a
-                className="group duration-100"
+                className="group duration-100 msm:text-[14px]"
                 href="mailto:chinmaysuryavanshi8@gmail.com"
               >
                 chinmaysuryavanshi8@gmail.com{" "}

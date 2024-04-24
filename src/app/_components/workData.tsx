@@ -93,13 +93,21 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
               <h3 className="pt-[4px]">{item.title}</h3>
               <div className="flex-grow flex flex-wrap gap-[5px] py-[3px]">
                 {item.workFilter.map((i) => (
-                  <Badge
-                    className="rounded-full h-min text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
-                    key={i.id + i.name}
-                    variant={"secondary"}
-                  >
-                    {i.name}
-                  </Badge>
+                  <>
+                    {/* <Badge
+                      className="rounded-full h-min text-[10px] msm:text-[8px] msm:px-[6px] font-normal"
+                      key={i.id + i.name}
+                      variant={"secondary"}
+                    >
+                      {i.name}
+                    </Badge> */}
+                    <div
+                      key={i.id + Image.name}
+                      className="rounded-full flex justify-center items-center bg-secondary text-secondary-foreground h-min text-[10px] msm:text-[8px] px-[6px] border-[1px] border-border py-[2px] font-normal"
+                    >
+                      {i.name}
+                    </div>
+                  </>
                 ))}
               </div>
               <a className="mt-[5px]" href={item.link} target="_blank">
