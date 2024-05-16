@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Chinmay's Portfolio",
   description:
     "Experienced Front-End Developer skilled in HTML, CSS, JavaScript, and modern frameworks, delivering intuitive and responsive web experiences.",
+  verification: {
+    google: "_LcopblLE43Q7imQS6LpaPPNvetIF0Bgh92uJr0yqLU",
+  },
 };
 
 export default function RootLayout({
@@ -25,12 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="_LcopblLE43Q7imQS6LpaPPNvetIF0Bgh92uJr0yqLU"
-        />
-      </Head>
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-JG0KDG7S75"
