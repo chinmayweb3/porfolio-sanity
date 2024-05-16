@@ -42,7 +42,7 @@ const ContactSection = async () => {
         <div className="w-full grid grid-cols-[1.3fr_1fr] mlg:grid-cols-1 gap-[50px] mlg:gap-[60px] items-center pt-[50px] msm:pt-[30px] px-[50px] msm:px-[20px]">
           <ContactField />
           <div className=" text-center pb-[60px] mmd:pb-0">
-            <h4 className="text-[36px] msm:text-t-sm">Let's Talk</h4>
+            <p className="text-[36px] msm:text-t-sm">Let's Talk</p>
             <p className="text-t2-c font-semibold">
               <a
                 className="group duration-100 msm:text-[14px]"

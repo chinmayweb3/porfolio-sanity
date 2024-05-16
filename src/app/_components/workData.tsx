@@ -110,7 +110,12 @@ const WorkCard = ({ options }: { options: IWorkQuery | undefined }) => {
                   </>
                 ))}
               </div>
-              <a className="mt-[5px] " href={item.link} target="_blank">
+              <a
+                className="mt-[5px] "
+                rel="nofollow"
+                href={item.link}
+                target="_blank"
+              >
                 <Button
                   variant="secondary"
                   className="w-full xl:hover:shadow-sm duration-150 xl:hover:bg-[#e8e8e8]"
