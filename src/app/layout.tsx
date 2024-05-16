@@ -26,20 +26,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-JG0KDG7S75"
-        ></Script>
-        <Script>
-          {`
+        <meta
+          name="google-site-verification"
+          content="_LcopblLE43Q7imQS6LpaPPNvetIF0Bgh92uJr0yqLU"
+        />
+      </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-JG0KDG7S75"
+      ></Script>
+      <Script>
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           
           gtag('config', 'G-JG0KDG7S75');
           `}
-        </Script>
-      </Head>
+      </Script>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="_LcopblLE43Q7imQS6LpaPPNvetIF0Bgh92uJr0yqLU"
+        />
+      </head>
       <body className={cn("", inter.className)}>
         <Navbar />
         {children}
