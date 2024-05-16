@@ -66,7 +66,11 @@ const Navbar = () => {
         <div className="hidden ml-auto mmd:block">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline">
+              <Button
+                variant="outline"
+                aria-label="hamburger"
+                aria-labelledby="hamburger-btn"
+              >
                 <HamburgerMenuIcon />
               </Button>
             </SheetTrigger>
