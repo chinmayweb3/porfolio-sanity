@@ -106,6 +106,7 @@ const Navbar = () => {
                       <SheetClose>
                         <Button variant={"ghost"}>
                           <a
+                            aria-label="Linkedin Link"
                             href="https://www.linkedin.com/in/chinmay-suryavanshi-76a4b2240/"
                             target="_blank"
                           >
@@ -120,6 +121,7 @@ const Navbar = () => {
                       <SheetClose>
                         <Button variant={"ghost"}>
                           <a
+                            aria-label="Github Link"
                             href="https://github.com/chinmayweb3?tab=repositories"
                             target="_blank"
                           >

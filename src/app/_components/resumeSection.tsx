@@ -15,7 +15,7 @@ const ResumeSection = async () => {
       <p className="text-t2 text-[18px] tracking-widest">
         To view the resume, click{" "}
         {resp?.resume && (
-          <a href={resp.resume} target="_blank">
+          <a aria-label="resume Link" href={resp.resume} target="_blank">
             <Button className="px-0 text-destructive" variant={"link"}>
               Here
             </Button>
