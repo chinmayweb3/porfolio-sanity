@@ -13,12 +13,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://berserksaga.xyz"),
+  alternates: {
+    canonical: "https://berserksaga.xyz",
+  },
   title: "Chinmay's Portfolio",
   description:
     "Experienced Front-End Developer skilled in HTML, CSS, JavaScript, and modern frameworks, delivering intuitive and responsive web experiences.",
-  verification: {
-    google: "_LcopblLE43Q7imQS6LpaPPNvetIF0Bgh92uJr0yqLU",
-  },
+
   keywords: ["portfolio", "chinmay suryavanshi"],
   authors: { name: "chinmay suryavanshi", url: "https://berserksaga.xyz" },
 };
@@ -53,12 +54,6 @@ export default function RootLayout({
           `}
       </Script>
 
-      <head>
-        <meta
-          name="google-site-verification"
-          content="_LcopblLE43Q7imQS6LpaPPNvetIF0Bgh92uJr0yqLU"
-        />
-      </head>
       <body className={cn("", inter.className)}>
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
