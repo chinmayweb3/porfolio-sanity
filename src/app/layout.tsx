@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   title: "Chinmay's Portfolio",
   description:
     "Experienced Front-End Developer skilled in HTML, CSS, JavaScript, and modern frameworks, delivering intuitive and responsive web experiences.",
-
+  verification: {
+    google: "h40eU2ciTesX85Fme2L456EWeCck3xHFjmQAlubxGr0",
+  },
   keywords: ["portfolio", "chinmay suryavanshi"],
   authors: { name: "chinmay suryavanshi", url: "https://berserksaga.xyz" },
 };
@@ -53,6 +55,12 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-TKDVMH58');
           `}
       </Script>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="h40eU2ciTesX85Fme2L456EWeCck3xHFjmQAlubxGr0"
+        />
+      </head>
 
       <body className={cn("", inter.className)}>
         {/* <!-- Google Tag Manager (noscript) --> */}
