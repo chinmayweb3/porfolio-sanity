@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://chinmayport.pages.dev",
+      url: "https://berserksaga.xyz",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
